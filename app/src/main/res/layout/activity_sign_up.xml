@@ -4,18 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
-    android:padding="30dp"
-    android:orientation="vertical">
+    tools:context=".SignUp"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/andika"
+        android:text="Create user"
+        android:textColor="#312D2D"
+
+        android:textSize="30sp"
+        android:textStyle="bold" /> <!--android:textAlignment="center"-->
+
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
         android:layout_height="200dp"
 
-        app:srcCompat="@drawable/login" />
+        app:srcCompat="@drawable/add_user_male_100px" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutEmail"
+        android:id="@+id/textInputLayoutName"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,15 +37,38 @@
         app:errorEnabled="true">
 
         <EditText
-            android:id="@+id/editTextEmail"
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/andika"
+            android:hint="Name"
+            android:textSize="20sp"
+            android:inputType="text|textPersonName"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutEmail"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColorHint="@color/colorDarck"
+        app:errorEnabled="true"
+        >
+
+        <EditText
+            android:id="@+id/editEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:fontFamily="@font/andika"
             android:hint="Email"
-            android:inputType="text|textPersonName"
+            android:inputType="textEmailAddress"
             android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutPassword"
         android:layout_marginTop="10dp"
@@ -42,11 +77,11 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:textColorHint="@color/colorDarck"
-        app:errorEnabled="true"
-        app:passwordToggleEnabled="true">
+        app:passwordToggleEnabled="true"
+        >
 
         <EditText
-            android:id="@+id/editTextPassword"
+            android:id="@+id/editPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -56,29 +91,15 @@
             android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="90dp"
-        android:background="@drawable/radio_in_button_login"
-        android:fontFamily="@font/andika"
-
-        android:onClick="EventLogin"
-        android:text="Login"
-        android:textColor="#ffffff"
-        android:textSize="19dp" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/radio_in_button"
         android:fontFamily="@font/andika"
 
-        android:onClick="eventOptenSignup"
-        android:text="Sign Up"
+        android:onClick="eventRegister"
+        android:text="Register"
         android:textColor="#ffffff"
         android:textSize="19dp" />
-
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.example.chat;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.chat.Retrofit.INodeJs;
 import com.example.chat.Retrofit.LoginResult;
+import com.example.chat.Retrofit.RetrofitClient;
 
 import java.util.HashMap;
 
@@ -25,7 +27,8 @@ public class Login extends AppCompatActivity {
 
     private Retrofit retrofit;
     private com.example.chat.Retrofit.INodeJs INodeJs;
-    private String BASE_URL = "http://192.168.1.4:3000";
+    //private String BASE_URL = "http://192.168.1.4:3000";
+
 
     @Override
     protected void onStop() {
@@ -52,10 +55,11 @@ public class Login extends AppCompatActivity {
 
 
 
-        retrofit = new Retrofit.Builder()
+        /*retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
-                .build();
+                .build();*/
+        retrofit = RetrofitClient.getInstance();
 
         INodeJs = retrofit.create(INodeJs.class);
 
@@ -118,5 +122,10 @@ public class Login extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void eventOptenSignup(View view){
+        Intent Register= new Intent(this, SignUp.class);
+        startActivity(Register);
     }
 }
