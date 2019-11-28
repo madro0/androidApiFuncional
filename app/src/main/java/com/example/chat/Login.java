@@ -101,7 +101,10 @@ public class Login extends AppCompatActivity {
 
                     builder1.show();
 
+
                     Toast.makeText(Login.this, "ya "+ result.getName(), Toast.LENGTH_SHORT).show();
+
+                    openChat( result.getName());
 
                 } else if (response.code() == 404) {
 
@@ -127,5 +130,11 @@ public class Login extends AppCompatActivity {
     public void eventOptenSignup(View view){
         Intent Register= new Intent(this, SignUp.class);
         startActivity(Register);
+    }
+
+    private void openChat(String name){
+        Intent intent = new Intent(Login.this, MainActivity.class);
+        intent.putExtra("username", name);
+        startActivity(intent);
     }
 }

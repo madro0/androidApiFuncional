@@ -9,5 +9,6 @@
     <color name="colorTitle">#FFFFFF</color>
     <color name="colorDarck">#2D3742</color>
     <color name="colorError">#E74C3C</color>
+    <color name="typing">#FF36C44B</color>
 
 </resources>
