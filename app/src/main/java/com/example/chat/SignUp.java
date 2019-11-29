@@ -3,12 +3,14 @@ package com.example.chat;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.chat.Retrofit.INodeJs;
+import com.example.chat.Retrofit.LoginResult;
 import com.example.chat.Retrofit.RetrofitClient;
 
 import java.util.HashMap;
@@ -61,7 +63,8 @@ public class SignUp extends AppCompatActivity {
 
                         if (response.code() == 200) {
                             Toast.makeText(SignUp.this,
-                                    "Signed up successfully", Toast.LENGTH_LONG).show();
+                                    "Usuario registrado", Toast.LENGTH_LONG).show();
+                            openLogin();
                         } else if (response.code() == 400) {
                             Toast.makeText(SignUp.this,
                                     "Already registered", Toast.LENGTH_LONG).show();
@@ -79,4 +82,11 @@ public class SignUp extends AppCompatActivity {
             }
 
 
+
+    private void openLogin(){
+        Intent intent = new Intent(SignUp.this, Login.class);
+
+        startActivity(intent);
+
+    }
 }

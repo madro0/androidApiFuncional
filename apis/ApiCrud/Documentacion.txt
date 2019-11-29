@@ -1,0 +1,9 @@
+npm init --yes
+
+npm install crypto uuid mysql body-parser express
+
+(
+crypto para encriptar la contraseña 
+uuid  para la uniqued id string 
+body-parser par la respuesta desde el api
+express para usar las librerias 

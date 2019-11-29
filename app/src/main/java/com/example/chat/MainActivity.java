@@ -50,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
     private Socket mSocket;
     {
         try {
-            mSocket = IO.socket("https://floating-island-83424.herokuapp.com/");
+            //https://floating-island-83424.herokuapp.com/
+            mSocket = IO.socket("http://192.168.43.30:5000/");
         } catch (URISyntaxException e) {
             Toast.makeText(this, "ther is error in the  socket url ", Toast.LENGTH_SHORT).show();
         }
